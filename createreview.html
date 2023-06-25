@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- font link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/createreview.css">
+    <link rel="stylesheet" href="css/home.css">
+   
+    <title>Create a Review Tab</title>
+</head>
+
+<body>
+
+    <!-- HEADER START -->
+<header>
+
+    <a href="#" class="logo">
+        <img src="sprites/icon.png" alt="Logo">
+        The Monkey Serve
+    </a>
+
+    <nav class="navbar">
+        <a class="active" href="#">Home</a>
+        <ul class="dropdown">
+            <li class="dropdown-toggle">Establishments
+                <ul class="dropdown-menu">
+                    <li><a href="Establishements.html">Ate Rica's Bacsilog</a></li>
+                    <li><a href="Establishment_GoodMunch.html">Good Munch</a></li>
+                    <li><a href="Establishment_KuyaMels.html">Kuya Mel's</a></li>
+                </ul>
+            </li>
+        </ul>
+        <a href="createreview.html">Review</a>
+        <a href="#aboutus">About Us</a>
+        <!--<a href="#search">Search</a>
+        <a href="#login">Login</a> -->
+    </nav>
+    
+    
+
+<div class="icons">
+    <i class="fas fa-bars" id="bars"></i>
+    <i class="fas fa-search" id="search-icon"></i>
+    <a href="viewprofile.html" class="fas fa-user" id="user-icon"></a>
+    <a href="#" class="fas fa-door-open" id="heart-icon"></a>
+</div>
+</header>
+
+    <!-- HEADER END -->
+
+    <!-- SEARCH -->
+    <form action="" id="search-form">
+        <input type="search" placeholder="search here..." name="" id="search-box">
+        <label for="search-box" class="fas fa-search"></label>
+        <i class="fas fa-times" id="close"></i>
+    </form>
+    <!-- SEARCH END -->
+
+    <section class="review" id="review">
+        <div class="background-photo">
+            <div class="container">
+                <div class="review-tagline">
+                    <h2>CREATE A REVIEW</h2>
+                </div>
+    
+                <div class="review-forms">
+                    <form>
+                        <input type="text" placeholder="Title" required>
+                        <textarea placeholder="Write a Review..."></textarea>
+    
+                        <div class="rating">
+                            <h3>How would you rate the food?</h3>
+                            <input type="radio" name="rating" id="5str" value="5">
+                            <label for="5str">5</label>
+                            <input type="radio" name="rating" id="4str" value="4">
+                            <label for="4str">4</label>
+                            <input type="radio" name="rating" id="3str" value="3">
+                            <label for="3str">3</label>
+                            <input type="radio" name="rating" id="2str" value="2">
+                            <label for="2str">2</label>
+                            <input type="radio" name="rating" id="1str" value="1">
+                            <label for="1str">1</label>
+                        </div>
+    
+                        <h3>Add photos or videos</h3>
+                        <input type="file" accept="image/*, video/*">
+                        <button type="submit" class="submit-button">Submit Review</button>
+                    </form>
+                </div>
+    
+            </div>
+ </div>
+    </section>
+    
+    <!-- js file link-->
+    <script src="js/home.js"></script>
+
+</body>
+
+</html>
