@@ -225,17 +225,17 @@ body {
 
 @media screen and (max-width: 768px) {
   .description-content {
-      flex-direction: column; /* Change to column direction */
-      align-items: center; /* Center align the content */
+      flex-direction: column;
+      align-items: center; 
   }
 
   .aligned-image {
-      width: 50%; /* Take up full width */
-      margin: 10px 0; /* Adjust the margins as needed */
+      width: 50%;
+      margin: 10px 0; 
   }
 
   .image-description {
-      margin-left: 0; /* Reset the left margin */
+      margin-left: 0; 
       margin-right: 0; 
       margin-top: 20px; 
       width: 80%;
