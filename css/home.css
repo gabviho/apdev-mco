@@ -190,8 +190,6 @@ header .icons #bars{
     background-color: #f2f2f2;
 }
 
-
-
 #search-form{
     position: fixed;
     top: -110%; left: 0;
@@ -522,7 +520,7 @@ header .icons #bars{
     color: var(--black);
     font-family: 'Nunito', sans-serif;
     font-size: 20px;
-    font-weight: 400;
+    font-weight: 600;
   }
 
   .agno-map .map .iframe{
