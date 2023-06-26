@@ -19,13 +19,13 @@
       <!-- HEADER START -->
 <header>
 
-    <a href="home.html" class="logo">
+    <a href="home-loggedin.html" class="logo">
         <img src="sprites/icon.png" alt="Logo">
         The Monkey Serve
     </a>
 
     <nav class="navbar">
-        <a class="active" href="home.html">Home</a>
+        <a class="active" href="home-loggedin.html">Home</a>
         <ul class="dropdown">
             <li class="dropdown-toggle">Establishments
                 <ul class="dropdown-menu">
@@ -52,6 +52,16 @@
 </header>
 
     <!-- HEADER END -->
+
+    <!-- SEARCH -->
+
+    <form action="" id="search-form">
+        <input type="search" placeholder="search here..." name="" id="search-box">
+        <label for="search-box" class="fas fa-search"></label>
+        <i class="fas fa-times" id="close"></i>
+    </form>
+
+    <!-- SEARCH END -->
 
     <div class="container">
 
@@ -96,6 +106,7 @@
             <button class="button-act edit-buttons">Delete Profile</button>
         </div>
 
-
+<!-- js file link-->
+<script src="js/home.js"></script>
 
 </body>

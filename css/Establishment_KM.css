@@ -14,11 +14,15 @@ body {
 }
 
 .header {
-    background-image: url('header-kuyamel.jpg');
+    background-image: url('../sprites/header-kuyamel.jpg');
     background-size: cover;
     background-position: center;
     height: 50vh;
     width: 100%;
+}
+
+.establishment{
+  padding-top: 5rem;
 }
 
 .content {

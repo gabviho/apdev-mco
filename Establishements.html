@@ -2,10 +2,61 @@
 <head>
 
 </head>
-    <link rel="stylesheet" type="text/css" href="establishment.css">
+    <link rel="stylesheet" type="text/css" href="css/establishment.css">
+    <!-- font link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
 
+    <!-- HEADER START -->
+<header>
+
+  <a href="home-loggedin.html" class="logo">
+      <img src="sprites/icon.png" alt="Logo">
+      The Monkey Serve
+  </a>
+
+  <nav class="navbar">
+      <a class="active" href="home-loggedin.html">Home</a>
+      <ul class="dropdown">
+          <li class="dropdown-toggle">Establishments
+              <ul class="dropdown-menu">
+                  <li><a href="Establishements.html">Ate Rica's Bacsilog</a></li>
+                  <li><a href="Establishment_GoodMunch.html">Good Munch</a></li>
+                  <li><a href="Establishment_KuyaMels.html">Kuya Mel's</a></li>
+              </ul>
+          </li>
+      </ul>
+      <a href="createreview.html">Review</a>
+      <a href="#aboutus">About Us</a>
+      <!--<a href="#search">Search</a>
+      <a href="#login">Login</a> -->
+  </nav>
+  
+
+<div class="icons">
+  <i class="fas fa-bars" id="bars"></i>
+  <i class="fas fa-search" id="search-icon"></i>
+  <a href="viewprofile.html" class="fas fa-user" id="user-icon"></a>
+  <a href="#" class="fas fa-door-open" id="heart-icon"></a>
+</div>
+</header>
+
+  <!-- HEADER END -->
+
+  <!-- SEARCH -->
+
+  <form action="" id="search-form">
+    <input type="search" placeholder="search here..." name="" id="search-box">
+    <label for="search-box" class="fas fa-search"></label>
+    <i class="fas fa-times" id="close"></i>
+</form>
+
+<!-- SEARCH END -->
+
+  <section class="establishment" id="establishment">
     <div class="header">
         <div class="content">
         </div>
@@ -13,7 +64,7 @@
       <div class="content-text">
       <div class="text-container">
         <h2>   ATE RICA'S BACSILOG
-            <img src="star.png" class="small-image">
+            <img src="sprites/star.png" class="small-image">
              <span class="rating"> Rating: 4/5 (5 reviews)</span>
              <button class="custom-button">Review Now</button>
         </h2>
@@ -21,7 +72,7 @@
     </div>
 
     <div class="description-content">
-    <img src="png-bacsilog.png" class="aligned-image">
+    <img src="sprites/png-bacsilog.png" class="aligned-image">
     <p class="image-description">The standard Silog meal is composed of 1 major ingredient (ex. Bacon, Tapa, Tocino, etc.)  
          1 piece egg, Ate Rica’s Special Cheese Sauce and liquid savor topped on 1 cup of rice. <br><br>
           More than 15 years of operations later, Ate Rica's Bacsilog remains strong and  
@@ -31,16 +82,16 @@
 
     <div class="comment-container">
         <div class="profile-picture">
-          <img src="agno.jpg" alt="Profile Picture">
+          <img src="sprites/agno.jpg" alt="Profile Picture">
         </div>
         <div class="comment-content">
           <span class="comment-author">Gabrielle Suba</span>
           &nbsp &nbsp &nbsp 
         
-            <img src="star.png"class="star-image">
-            <img src="star.png"class="star-image">
-            <img src="star.png"class="star-image">
-            <img src="star.png"class="star-image">
+            <img src="sprites/star.png"class="star-image">
+            <img src="sprites/star.png"class="star-image">
+            <img src="sprites/star.png"class="star-image">
+            <img src="sprites/star.png"class="star-image">
             &nbsp
             <span class="comment-author">4/5</span>
         
@@ -55,14 +106,14 @@
       
       <div class="comment-container">
         <div class="profile-picture">
-          <img src="agno.jpg" alt="Profile Picture">
+          <img src="sprites/agno.jpg" alt="Profile Picture">
         </div>
         <div class="comment-content">
           <span class="comment-author">Gabrielle Vince Ocampo</span>
           &nbsp &nbsp &nbsp 
-          <img src="star.png"class="star-image">
-          <img src="star.png"class="star-image">
-          <img src="star.png"class="star-image">
+          <img src="sprites/star.png"class="star-image">
+          <img src="sprites/star.png"class="star-image">
+          <img src="sprites/star.png"class="star-image">
           &nbsp
           <span class="comment-author">3/5</span>
           <p class="comment-text">MID for me, sorry not sorry</p>
@@ -76,12 +127,12 @@
 
     <div class="comment-container">
       <div class="profile-picture">
-        <img src="agno.jpg" alt="Profile Picture">
+        <img src="sprites/agno.jpg" alt="Profile Picture">
       </div>
       <div class="comment-content">
         <span class="comment-author">Shanky de Gracia</span>
         &nbsp &nbsp &nbsp 
-        <img src="star.png"class="star-image">
+        <img src="sprites/star.png"class="star-image">
         &nbsp
         <span class="comment-author">1/5</span>
         <p class="comment-text">No comment, the cheese sauce is sweet lol</p>
@@ -92,5 +143,8 @@
         </div>
       </div>
   </div>
+  </section>
+  <!-- js file link-->
+<script src="js/home.js"></script>
 </body>
 </html>

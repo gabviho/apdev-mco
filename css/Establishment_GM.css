@@ -14,7 +14,7 @@ body {
 }
 
 .header {
-    background-image: url('header-goodmunch.png');
+    background-image: url('../sprites/header-goodmunch.png');
     background-size: cover;
     background-position: center;
     height: 50vh;

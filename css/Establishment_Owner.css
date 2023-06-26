@@ -14,7 +14,7 @@ body {
 }
 
 .header {
-    background-image: url('header-aterica.png');
+    background-image: url('../sprites/header-aterica.png');
     background-size: cover;
     background-position: center;
     height: 50vh;
@@ -23,6 +23,10 @@ body {
 
 .content {
     margin-top: 0;
+}
+
+.establishment{
+  padding-top: 5rem;
 }
 
 .text-container {
