@@ -83,28 +83,39 @@
     </div>
 
     <div class="comment-container">
-        <div class="profile-picture">
-          <img src="sprites/agno.jpg" alt="Profile Picture">
+      <div class="profile-picture">
+        <img src="sprites/agno.jpg" alt="Profile Picture">
+      </div>
+      <div class="comment-content">
+        <span class="comment-author">Gabrielle Suba</span>
+        &nbsp; &nbsp; &nbsp;
+    
+        <img src="sprites/star.png" class="star-image">
+        <img src="sprites/star.png" class="star-image">
+        <img src="sprites/star.png" class="star-image">
+        <img src="sprites/star.png" class="star-image">
+        &nbsp;
+        <span class="comment-author">4/5</span>
+    
+        <p class="comment-text">This is the reason why I wake up early in the morning. A must try!</p>
+        <span class="comment-time">2 hours ago</span>
+        <!-- Text box for replying to the comment -->
+        <div class="reply-container">
+          <input type="text" class="reply-input" placeholder="Write a reply...">
+          <button class="reply-button">Reply</button>
         </div>
-        <div class="comment-content">
-          <span class="comment-author">Gabrielle Suba</span>
-          &nbsp &nbsp &nbsp 
-        
-            <img src="sprites/star.png"class="star-image">
-            <img src="sprites/star.png"class="star-image">
-            <img src="sprites/star.png"class="star-image">
-            <img src="sprites/star.png"class="star-image">
-            &nbsp
-            <span class="comment-author">4/5</span>
-        
-          <p class="comment-text"> This is the reason why I wake up early in the morning. A must try!</p>
-          <span class="comment-time">2 hours ago</span>
-          <div class="comment-buttons">
-            <button class="helpful-button">Helpful</button>
-            <button class="not-helpful-button">Not Helpful</button>
-          </div>
+        <div class="comment-buttons">
+          <button class="helpful-button">Helpful</button>
+          <button class="not-helpful-button">Not Helpful</button>
+    
+          <!-- Adding the buttons for deleting and editing -->
+          <button class="delete-button">Delete</button>
+          <button class="edit-button">Edit</button>
         </div>
       </div>
+    </div>
+    
+    
       
       <div class="comment-container">
         <div class="profile-picture">
@@ -146,6 +157,8 @@
       </div>
   </div>
   </section>
+
+  
   <!-- js file link-->
 <script src="js/home.js"></script>
 </body>

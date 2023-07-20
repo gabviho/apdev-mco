@@ -178,11 +178,11 @@ body {
 }
 
 .helpful-button{
-    background-color: #8eff75c5;
+    background-color: #287417c5;
 }
 
 .not-helpful-button{
-    background-color: #e7705bc5;
+    background-color: #cc5540c5;
 }
 
 .description-content {
@@ -206,6 +206,15 @@ body {
   margin-right: 50px;
   font-family: var(--secondary-font-family);
 }
+
+.delete-button{
+  background-color: #6d2621;
+}
+
+.edit-button{
+  background-color: #393636;
+}
+
 
 @media screen and (max-width: 991px) {
     .description-content {
