@@ -69,14 +69,22 @@
                 <div class="review-tagline">
                     <h2>CREATE A REVIEW</h2>
                 </div>
-
+                <div class="dropdown">
+                    <button class="dropdown-button" id="dropbutton">Select an Establishment to Review</button>
+                    <div class="dropdown-content">
+                        <a href="#" data-text="Ate Rica's Bacsilog">Ate Rica's Bacsilog</a>
+                        <a href="#" data-text="Good Munch">Good Munch</a>
+                        <a href="#" data-text="Kuya Mel's">Kuya Mel's</a>
+                        <a href="#" data-text="Happy n Healthy">Happy n Healthy</a>
+                        <a href="#" data-text="Potato Giant">Potato Giant</a>
+                    </div>
+                </div>
                 <div class="review-forms">
                     <form>
-                        <input type="text" placeholder="Title" required>
                         <textarea placeholder="Write a Review..."></textarea>
 
                         <div class="rating">
-                            <h3>How would you rate the food?</h3>
+                            <h2>How would you rate the food?</h2>
                             <input type="radio" name="rating" id="5str" value="5">
                             <label for="5str">5</label>
                             <input type="radio" name="rating" id="4str" value="4">
@@ -101,6 +109,7 @@
 
     <!-- js file link-->
     <script src="js/home.js"></script>
+    <script src="js/dropdown.js"></script>
 
 </body>
 
