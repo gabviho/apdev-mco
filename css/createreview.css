@@ -31,10 +31,10 @@
     max-width: 800px;
     margin: 50px auto;
     background-color: rgba(255, 255, 255, 0.8);
-    padding: 30px;
+    padding: 55px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
     border-radius: 2%;
-    margin-top: 330px;
+    margin-top: 200px;
     resize: both;
     overflow: auto;
 }
