@@ -2,11 +2,11 @@
 <head>
 
 </head>
-    <link rel="stylesheet" type="text/css" href="css/establishment.css">
+    <link rel="stylesheet" type="text/css" href="../css/establishment.css">
     <!-- font link-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="../css/home.css">
 </head>
 <body>
 
@@ -42,7 +42,7 @@
   <i class="fas fa-bars" id="bars"></i>
   <i class="fas fa-search" id="search-icon"></i>
   <a href="viewprofile.html" class="fas fa-user" id="user-icon"></a>
-  <a href="home-loggedout.html" class="fas fa-door-open" id="heart-icon"></a>
+  <a href="index.html" class="fas fa-door-open" id="heart-icon"></a>
 </div>
 </header>
 
@@ -98,20 +98,18 @@
         <span class="comment-author">4/5</span>
     
         <p class="comment-text">This is the reason why I wake up early in the morning. A must try!</p>
-        <span class="comment-time">2 hours ago</span>
-        <!-- Text box for replying to the comment -->
-        <div class="reply-container">
-          <input type="text" class="reply-input" placeholder="Write a reply...">
-          <button class="reply-button">Reply</button>
-        </div>
-        <div class="comment-buttons">
-          <button class="helpful-button">Helpful</button>
-          <button class="not-helpful-button">Not Helpful</button>
-    
-          <!-- Adding the buttons for deleting and editing -->
-          <button class="delete-button">Delete</button>
-          <button class="edit-button">Edit</button>
-        </div>
+          <span class="comment-time">2 hours ago</span>
+          <!-- Form for replying to the comment -->
+          <form class="reply-container" id="reply-form">
+            <input type="text" class="reply-input" placeholder="Write a reply..." name="reply">
+            <button type="submit" class="reply-button">Reply</button>
+          </form>
+          <div class="comment-buttons">
+            <button class="helpful-button">Helpful</button>
+            <button class="not-helpful-button">Not Helpful</button>
+            <button class="delete-button">Delete</button>
+            <button class="edit-button">Edit</button>
+          </div>
       </div>
     </div>
     
