@@ -8,6 +8,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = process.env.SERVER_PORT;   
 
+let currentUser;
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -80,6 +81,63 @@ app.post('/register', async (req, res) =>{
     }
    
 })
+
+app.post('/login',async (req, res) => {
+    try {
+        const userdata = req.body;
+        console.log(userdata);
+
+        const db = dbconn.getDb();
+
+        const customer_user = await db.collection('customers').findOne({email: userdata.email});
+        const owner_user = await db.collection('owners').findOne({email: userdata.email});
+        
+        // check if user is a customer
+        if(customer_user){
+            res.redirect('../../html/homepage.html');
+            activeUser = currentUser;
+        }
+
+        // check if user is an owner
+        else if(owner_user){
+            res.render('owner-profile', { owner_user });
+            //res.redirect('../../html/user-views/owner-profile.html');
+            activeUser=owner_user;
+        }
+
+        // user and/or pass doesn't exist
+        else{
+          
+           
+            return res.redirect('../../html/login.html');
+            
+        }
+    } catch (err) {
+      console.error(err);
+      return res.sendStatus(500);
+    }
+    
+})
+
+app.post('/review', async (req, res) => {
+    try{
+        const review_data = req.body;
+        console.log(review_data);
+        const db = dbconn.getDb();
+        const collection = await db.collection('posts');
+        const temp_review = await collection.insertOne(review_data);
+       // console.log(currentEst);
+     //   const temp_user = await collection.insertOne({...review_data, estname: currentEst, reviewee: activeUser});
+    //    console.log(temp_user.reviewee.firstname);
+        //await collection.updateOne({_id: temp_review._id}, {$set: { estname: currentEst }});
+        res.redirect('../../html/homepage.html');
+
+    }
+    catch(err){
+        console.error(err);
+        return res.sendStatus(500);
+    }
+});
 
 dbconn.connectToMongo((err) => {
     if(err) {
