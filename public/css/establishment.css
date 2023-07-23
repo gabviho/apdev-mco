@@ -1,5 +1,3 @@
-
-
 @import url('https://fonts.googleapis.com/css2?family=Bacasime+Antique&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bacasime+Antique&family=Coustard&display=swap');
 
@@ -15,7 +13,6 @@ body {
 }
 
 .header {
-    background-image: url('../sprites/header-aterica.png');
     background-size: cover;
     background-position: center;
     height: 50vh;
@@ -30,6 +27,9 @@ body {
     padding: px;
     width: 50%;
     margin: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .establishment{
@@ -37,11 +37,21 @@ body {
 }
   
 .text-container h2 {
+  margin-bottom: 0.5rem;
     font-size: 36px;
     margin-bottom: 10px;
     font-family: var(--main-font-family);
+    color: black; /* Set the text color of the h2 element */
+  }
+
+  .star-icon {
+    color: #e6c961;
   }
   
+ .text-container h2 .star-icon {
+    color: #e6c961; /* Override the color for the star icon inside h2 */
+  }
+
 .text-container p {
     font-size: 18px;
     margin: 0;
@@ -49,6 +59,7 @@ body {
   }
 
 .content--text {
+    margin-top: 0.5rem;
     display: flex;
     align-items: center;
 }
@@ -76,21 +87,25 @@ body {
 }
 
 .custom-button {
-
-    width: 100px; 
-    height: 30px;
-    background-color: #e6c961; 
-    border: none;
-    color: white;
-    font-size: 12px;
-    font-weight: bold;
-    font-family: var(--main-font-family);
+  width: 100px;
+  height: 30px;
+  background-color: #e6c961;
+  border: none;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  font-family: var(--main-font-family);
+  display: flex; /* Use flexbox */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
 }
+
 
 .description-content{
    
     display: flex;
     align-items: flex-start;
+    margin-bottom: 10rem;
 }
 
 .aligned-image {
@@ -109,15 +124,23 @@ body {
     margin-left: 2px; 
     margin-top: 70px;
     margin-right: 50px;
-    font-family: var(--secondary-font-family);
+    font-family: var(--main-font-family);
 }
 
 .comment-container {
+  background-size: cover;
   background-color: #e8ca322a;
   border-radius: 5px;
+  border-width: 1rem;
+  border-color: black;
   padding: 10px;
   margin-bottom: 10px;
   display: flex;
+  width: 100%;
+  align-items: center;
+  /* Center the .comment-container below other divs */
+  border: 0.5px solid black;
+  margin: 0 auto;
 }
 
 .profile-picture {
@@ -137,12 +160,19 @@ body {
 .comment-content {
   flex-grow: 1;
   font-family: var(--secondary-font-family);
+  font-size: larger;
 }
 
 .comment-author {
   font-weight: bold;
   color: #333;
   font-family: var(--main-font-family);
+  font-size: large;
+  color: black;
+}
+
+.star-image {
+  color: #e6c961; /* Set the star icon color to yellow */
 }
 
 .comment-text {
@@ -178,11 +208,19 @@ body {
 }
 
 .helpful-button{
-    background-color: #287417c5;
+    background-color: #50cd34c5;
 }
 
 .not-helpful-button{
-    background-color: #cc5540c5;
+    background-color: #ef5b41c5;
+}
+
+.delete-button{
+  background-color: #2e2d2dc5;
+}
+
+.edit-button{
+  background-color: #939393c5;
 }
 
 .description-content {
@@ -205,16 +243,8 @@ body {
   margin-top: 70px;
   margin-right: 50px;
   font-family: var(--secondary-font-family);
+  font-size: large;
 }
-
-.delete-button{
-  background-color: #6d2621;
-}
-
-.edit-button{
-  background-color: #393636;
-}
-
 
 @media screen and (max-width: 991px) {
     .description-content {
@@ -254,6 +284,6 @@ body {
       margin-top: 20px; 
       width: 80%;
       max-width: 600px;
-      font-size:10px;
+      font-size:15px;
   }
 }

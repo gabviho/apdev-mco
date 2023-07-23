@@ -4,6 +4,7 @@ const dbconn = require('./conn.js');
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
+const { ObjectId } = require('bson');
 
 const app = express();
 const port = process.env.SERVER_PORT;   
@@ -14,8 +15,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+app.set('view engine','ejs');
+app.set('views',path.join(__dirname, 'public/html'));
+
 app.get('/', (req, res) =>{
-    res.sendFile(path.join(__dirname, 'public/html/index.html'));
+    res.sendFile(path.join(__dirname, './public/html/index.html'));
 })
 
 app.post('/register', async (req, res) =>{
@@ -107,8 +111,6 @@ app.post('/login',async (req, res) => {
 
         // user and/or pass doesn't exist
         else{
-          
-           
             return res.redirect('../../html/login.html');
             
         }
@@ -138,6 +140,53 @@ app.post('/review', async (req, res) => {
         return res.sendStatus(500);
     }
 });
+
+    app.get('/estAteRicas', async (req, res) => {
+        const loopPosts = await dbconn.getDb().collection('posts').find({estname: 'Ate Rica\'s Bacsilog'}).toArray();
+        console.log(loopPosts);
+        estIndex = "Ate Rica's Bacsilog";
+        const estData = await dbconn.getDb().collection('Establishments').findOne({_id: new ObjectId('64bc319514a9df3a7505c2c0')});
+        console.log(estData);
+        res.render('Establishments', {estData, loopPosts});
+    });
+
+    app.get('/estGoodMunch', async (req, res) => {
+        const loopPosts = await dbconn.getDb().collection('posts').find({estname: 'Good Munch'}).toArray();
+        console.log(loopPosts);
+        estIndex = "Good Munch";
+        const estData = await dbconn.getDb().collection('Establishments').findOne({_id: new ObjectId('64bcedd714a9df3a7505c2c4')});
+        console.log(estData);
+        res.render('Establishments', {estData, loopPosts});
+    });
+
+    app.get('/estHappyNHealthy', async (req, res) => {
+        const loopPosts = await dbconn.getDb().collection('posts').find({estname: 'Happy n Healthy'}).toArray();
+        console.log(loopPosts);
+        estIndex = "Happy N' Healthy";
+        const estData = await dbconn.getDb().collection('Establishments').findOne({_id: new ObjectId('64bcee3214a9df3a7505c2c6')});
+        console.log(estData);
+        res.render('Establishments', {estData, loopPosts});
+    });
+
+    app.get('/estKuyaMels', async (req, res) => {
+        const loopPosts = await dbconn.getDb().collection('posts').find({estname: 'Kuya Mel\'s'}).toArray();
+        console.log(loopPosts);
+        estIndex = "Kuya Mels";
+        const estData = await dbconn.getDb().collection('Establishments').findOne({_id: new ObjectId('64bcee6514a9df3a7505c2c7')});
+        console.log(estData);
+        res.render('Establishments', {estData, loopPosts});
+    });
+
+    app.get('/estPotatoGiant', async (req, res) => {
+        const loopPosts = await dbconn.getDb().collection('posts').find({estname: 'Potato Giant'}).toArray();
+        console.log(loopPosts);
+        estIndex = "Potato Giant";
+        const estData = await dbconn.getDb().collection('Establishments').findOne({_id: new ObjectId('64bceedb14a9df3a7505c2c9')});
+        console.log(estData);
+        res.render('Establishments', {estData, loopPosts});
+    });
+
+
 
 dbconn.connectToMongo((err) => {
     if(err) {

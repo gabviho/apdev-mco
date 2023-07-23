@@ -13,11 +13,5 @@ dropdownContent.querySelectorAll('a').forEach(item => {
 
         // Update the button's text
         button.textContent = newText;
-<<<<<<< HEAD
-=======
-        button.value = newText;
-
-        
->>>>>>> 14825560c5d15965309792bbd8eee00f982c4179
     });
 });

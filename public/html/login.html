@@ -9,66 +9,19 @@
   <link rel="stylesheet" href="../css/home.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
 </head>
- <!-- HEADER START -->
- <header>
-
-  <a href="index.html" class="logo">
-      <img src="sprites/icon.png" alt="Logo">
-      The Monkey Serve
-  </a>
-
-  <nav class="navbar">
-      <a class="." href="index.html">Home</a>
-      <ul class="dropdown">
-          <li class="dropdown-toggle">Establishments
-              <ul class="dropdown-menu">
-                  <li><a href="Establishements.html">Ate Rica's Bacsilog</a></li>
-                  <li><a href="Establishment_GoodMunch.html">Good Munch</a></li>
-                  <li><a href="Establishment_KuyaMels.html">Kuya Mel's</a></li>
-                  <li><a href="Establishment_HappynHealthy.html">Happy n Healthy</a></li>
-                  <li><a href="Establishment_PotatoGiant.html">Potato Giant</a></li>
-              </ul>
-          </li>
-      </ul>
-      <a href="createreview.html">Review</a>
-      <a href="#aboutus">About Us</a>
-      <!--<a href="#search">Search</a>
-      <a href="#login">Login</a> -->
-  </nav>
-  
-  
-
-<div class="icons">
-  <i class="fas fa-bars" id="bars"></i>
-  <i class="fas fa-search" id="search-icon"></i>
-</div>
-</header>
-
-  <!-- HEADER END -->
-
-  <!-- SEARCH -->
-
-  <form action="" id="search-form">
-      <input type="search" placeholder="search here..." name="" id="search-box">
-      <label for="search-box" class="fas fa-search"></label>
-      <i class="fas fa-times" id="close"></i>
-  </form>
-
-  <!-- SEARCH END -->
-
 <body>
   <div class="bg">
     <div class="container">
       <div class="wrapper">
         <div class="title"><span>Welcome to Monkey Serve!</span></div>
-        <form action="/login" method="POST"> <!-- Update the action attribute with the destination page -->
+        <form action="/login" method="POST" id="login-form"> <!-- Update the action attribute with the destination page -->
           <div class="row">
             <i class="fas fa-user"></i>
-            <input type="text" name="email" placeholder="Email" required>
+            <input type="text" name="email" id="email" placeholder="Email" required>
           </div>
           <div class="row">
             <i class="fas fa-lock"></i>
-            <input type="password" name="password" placeholder="Password" required>
+            <input type="password" name="password" id="password" placeholder="Password" required>
           </div>
           <div class="pass"><a href="#">Forgot password?</a></div>
           <div class="row button">
@@ -80,9 +33,38 @@
     </div>
   </div>
 
-      <!-- js file link-->
-<script src="js/home.js"></script>
-<script src="js/user.js"></script>
+  <!-- js file link-->
+  <script src="js/home.js"></script>
+  <script src="js/user.js"></script>
+  <script>
+    // Check if there is data stored in local storage
+    const storedEmail = localStorage.getItem('rememberedEmail');
+    const storedPassword = localStorage.getItem('rememberedPassword');
 
+    // If there is stored data, populate the form fields
+    if (storedEmail && storedPassword) {
+      document.getElementById('email').value = storedEmail;
+      document.getElementById('password').value = storedPassword;
+    }
+
+    // Listen for form submission
+    document.getElementById('login-form').addEventListener('submit', function(event) {
+      const emailInput = document.getElementById('email');
+      const passwordInput = document.getElementById('password');
+      
+      // Check if the "Remember Me" checkbox is checked
+      const rememberMeChecked = document.getElementById('rememberMe').checked;
+
+      // If "Remember Me" is checked, store the email and password in local storage
+      if (rememberMeChecked) {
+        localStorage.setItem('rememberedEmail', emailInput.value);
+        localStorage.setItem('rememberedPassword', passwordInput.value);
+      } else {
+        // If "Remember Me" is not checked, remove the stored data from local storage
+        localStorage.removeItem('rememberedEmail');
+        localStorage.removeItem('rememberedPassword');
+      }
+    });
+  </script>
 </body>
 </html>
