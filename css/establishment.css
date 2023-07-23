@@ -127,19 +127,22 @@ body {
     margin-left: 2px; 
     margin-top: 70px;
     margin-right: 50px;
-    font-family: var(--secondary-font-family);
+    font-family: var(--main-font-family);
 }
 
 .comment-container {
   background-size: cover;
   background-color: #e8ca322a;
   border-radius: 5px;
+  border-width: 1rem;
+  border-color: black;
   padding: 10px;
   margin-bottom: 10px;
   display: flex;
-  width: 90%;
+  width: 100%;
   align-items: center;
   /* Center the .comment-container below other divs */
+  border: 0.5px solid black;
   margin: 0 auto;
 }
 
