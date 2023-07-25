@@ -13,8 +13,5 @@ dropdownContent.querySelectorAll('a').forEach(item => {
 
         // Update the button's text
         button.textContent = newText;
-        button.value = newText;
-
-        
     });
 });
