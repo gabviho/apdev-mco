@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Coustard&display=swap');
+
+:root {
+    --main-font-family: 'Coustard', seriff;
+}
+
+.backgroud-photo {
+    background-image: url('../sprites/reviewsbg.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.container {
+    max-width: 750px;
+    max-height: 680px;
+    margin: 50px auto;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 40px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+    border-radius: 2%;
+    margin-top: 95px;
+    resize: both;
+    overflow: auto;
+}
+
+.editprof-name {
+    font-weight: bold;
+    margin-top: 0px;
+    text-align: center;
+    font-size: 25px;
+
+}
+
+.profile-picture {
+    position: relative;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ccc;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+label[for="picture-input-btn"] {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #E8CB32;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 7%;
+    cursor: pointer;
+}
+
+label[for="picture-input-btn"]:hover {
+    opacity: 0.9;
+}
+
+.review-forms form {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--main-font-family);
+}
+
+.review-forms input[type="text"],
+.review-forms textarea {
+    margin-bottom: 10px;
+    padding: 5px;
+    font-family: var(--main-font-family);
+}
+
+.label {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.submit-button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #E8CB32;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-family: var(--main-font-family);
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    opacity: 0.7;
+}

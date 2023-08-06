@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monkey Serve</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+    <!-- font link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/home.css">
+</head>
+
+<body>
+
+    <!-- HEADER START -->
+    <header>
+
+        <a href="#home" class="logo">
+            <img src="../sprites/icon.png" alt="Logo">
+            The Monkey Serve
+        </a>
+
+        <nav class="navbar">
+            <a class="active" href="#">Home</a>
+            <ul class="dropdown">
+                <li class="dropdown-toggle">Establishments
+                    <ul class="dropdown-menu">
+                        <li><a href="Establishements.html">Ate Rica's Bacsilog</a></li>
+                        <li><a href="Establishment_GoodMunch.html">Good Munch</a></li>
+                        <li><a href="Establishment_KuyaMels.html">Kuya Mel's</a></li>
+                        <li><a href="Establishment_HappynHealthy.html">Happy n Healthy</a></li>
+                        <li><a href="Establishment_PotatoGiant.html">Potato Giant</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <a href="createreview.html">Review</a>
+            <a href="#aboutus">About Us</a>
+            <!--<a href="#search">Search</a>
+        <a href="#login">Login</a> -->
+        </nav>
+
+
+
+        <div class="icons">
+            <i class="fas fa-bars" id="bars"></i>
+            <i class="fas fa-search" id="search-icon"></i>
+            <a href="/viewprofile" class="fas fa-user" id="user-icon"></a>
+            <a href="home-loggedout.html" class="fas fa-door-open" id="heart-icon"></a>
+        </div>
+    </header>
+
+    <!-- HEADER END -->
+
+    <!-- SEARCH -->
+
+    <form action="" id="search-form">
+        <input type="search" placeholder="search here..." name="" id="search-box">
+        <label for="search-box" class="fas fa-search"></label>
+        <i class="fas fa-times" id="close"></i>
+    </form>
+
+    <!-- SEARCH END -->
+
+    <!-- HOMEPAGE -->
+
+    <section class="home" id="home">
+
+        <div class="swiper home-slider">
+
+            <div class="swiper-wrapper wrapper">
+
+                <div class="swiper-slide slide">
+                    <div class="image">
+                        <img src="../sprites/slide1.png" alt="">
+                    </div>
+                    <div class="content1">
+                        <p>
+                            <span class="font1">Let the Monkey tell you how to</span>
+                            <span class="font2">Serve</span>
+                        </p>
+                        <h3>Bacsilog</h3>
+                        <p1> More than 15 years of operations later, Ate Rica's Bacsilog remains strong and determined
+                            to provide to more people the famous Bacsilog with its memorable recipe and taste; a taste
+                            that, in the words of a blogger, "the Lasallian community holds close to their hearts."</p>
+                            <a href="createreview.html" class="btn">Write a Review</a>
+                    </div>
+
+                </div>
+
+                <div class="swiper-slide slide">
+                    <div class="content">
+                        <p>
+                            <span class="font1">Let the Monkey tell you how to</span>
+                            <span class="font2">Serve</span>
+                        </p>
+                        <h3>Good Munch</h3>
+                        <p1> Good Munch serves SO MUNCH BETTER Asian Fusion Recipes curated with lots of love from Chef
+                            Munch!</p>
+                            <a href="createreview.html" class="btn">Write a Review</a>
+                    </div>
+
+                    <div class="image">
+                        <img src="../sprites/slide2.png" alt="">
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="swiper-pagination"></div>
+
+        </div>
+
+    </section>
+
+    <!-- HOMEPAGE END-->
+
+    <!-- FEATURED -->
+
+    <section class="featured" id="featured">
+        <div class="line-divider">
+            <hr>
+            <p>
+                <span class="fonta"> meanwhile in</span>
+                <span class="fontb">Agno</span>
+            </p>
+        </div>
+        <div class="bilog-wrapper">
+
+            <div class="worth-it">
+                <div class="circular--landscape">
+                    <img src="../sprites/1.png">
+                </div>
+                <span class="worth">&nbsp Worth it? &nbsp</span>
+            </div>
+
+            <div class="college">
+                <div class="circular--landscape">
+                    <img src="../sprites/2.png">
+                </div>
+                <span class="college-survival">&nbsp College Survival &nbsp</span>
+            </div>
+
+            <div class="fun">
+                <div class="circular--landscape">
+                    <img src="../sprites/3.png">
+                </div>
+                <span class="fun-bites">&nbsp Fun Bites &nbsp</span>
+            </div>
+
+            <div class="beverages">
+                <div class="circular--landscape">
+                    <img src="../sprites/5.png">
+                </div>
+                <span class="bev">&nbsp Beverages &nbsp</span>
+            </div>
+
+            <div class="student">
+                <div class="circular--landscape">
+                    <img src="../sprites/4.png">
+                </div>
+                <span class="student-friendly">&nbsp Student Friendly &nbsp</span>
+            </div>
+
+        </div>
+
+        <div class="line-divider2">
+            <hr>
+        </div>
+
+    </section>
+
+    <!-- FEATURED END-->
+
+    <!-- MAP START  -->
+
+    <section class="agno-map">
+        <div class="map">
+            <h1>Where is Agno?</h1>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.5766621754974!2d120.9900139768561!3d14.566184777914819!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c981c36a5709%3A0x3b42102e9c131985!2sAgno%20Food%20Court!5e0!3m2!1sen!2sph!4v1687753076963!5m2!1sen!2sph"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="line-divider3">
+            <hr>
+        </div>
+    </section>
+
+
+    <!-- MAP END -->
+
+    <!-- ABOUT SECTION  -->
+
+    <section class="about" id="about">
+
+        <div class="row">
+            <div class="image">
+                <img src="../sprites/about.png" alt="">
+            </div>
+            <h1 class="About-us">About Us</h1>
+        </div>
+
+        <div class="content">
+            <p>"The Monkey Serve" - your go-to platform for students to review the delectable cuisine available in Agno!
+            </p>
+            <p>The Monkey Serve is a dynamic website designed exclusively for students, </p>
+            <p>providing them with a unique opportunity to share their experiences and opinions on the various food
+                options available in Agno</p>
+        </div>
+
+    </section>
+
+    <!-- ABOUT SECTION END -->
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <!-- js file link-->
+    <script src="../js/home.js"></script>
+
+</body>
+
+</html>

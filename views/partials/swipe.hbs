@@ -1,0 +1,34 @@
+<!-- SWIPE HOMEPAGE -->
+
+    <section class="home" id="home">
+
+        <div class="swiper home-slider">
+
+            <div class="swiper-wrapper wrapper">
+                {{#each establishments}}
+                <div class="swiper-slide slide">
+
+                    <div class="content1">
+                        <p>
+                            <span class="font1">Let the Monkey tell you how to</span>
+                            <span class="font2">Serve</span>
+                        </p>
+                        <h3>{{this.name}}</h3>
+                        <p1> {{this.description}}</p>
+                    </div>
+                    <div class="image">
+                        <img src={{this.icon}} alt="">
+                    </div>
+
+                </div>
+                {{/each}}
+
+            </div>
+
+            <div class="swiper-pagination"></div>
+
+        </div>
+
+    </section>
+
+    <!-- SWIPE HOMEPAGE END-->

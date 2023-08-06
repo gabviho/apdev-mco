@@ -17,26 +17,26 @@
     <!-- HEADER START -->
     <header>
 
-        <a href="home-loggedin.html" class="logo">
-            <img src="sprites/icon.png" alt="Logo">
+        <a href="../html/homepage.html" class="logo">
+            <img src="../sprites/icon.png" alt="Logo">
             The Monkey Serve
         </a>
 
         <nav class="navbar">
-            <a class="." href="home-loggedin.html">Home</a>
+            <a class="." href="../html/homepage.html">Home</a>
             <ul class="dropdown">
                 <li class="dropdown-toggle">Establishments
                     <ul class="dropdown-menu">
-                        <li><a href="Establishements.html">Ate Rica's Bacsilog</a></li>
-                        <li><a href="Establishment_GoodMunch.html">Good Munch</a></li>
-                        <li><a href="Establishment_KuyaMels.html">Kuya Mel's</a></li>
-                        <li><a href="Establishment_HappynHealthy.html">Happy n Healthy</a></li>
-                        <li><a href="Establishment_PotatoGiant.html">Potato Giant</a></li>
+                        <li><a href="/estAteRicas">Ate Rica's Bacsilog</a></li>
+                        <li><a href="/estGoodMunch">Good Munch</a></li>
+                        <li><a href="/estKuyaMels">Kuya Mel's</a></li>
+                        <li><a href="/estHappyNHealthy">Happy n Healthy</a></li>
+                        <li><a href="/estPotatoGiant">Potato Giant</a></li>
                     </ul>
                 </li>
             </ul>
-            <a class="active" href="createreview.html">Review</a>
-            <a href="home-loggedin.html">About Us</a>
+            <a class="active" href="../createreview.html">Review</a>
+            <a href="../html/homepage.html">About Us</a>
             <!--<a href="#search">Search</a>
             <a href="#login">Login</a> -->
         </nav>
@@ -46,8 +46,8 @@
         <div class="icons">
             <i class="fas fa-bars" id="bars"></i>
             <i class="fas fa-search" id="search-icon"></i>
-            <a href="viewprofile.html" class="fas fa-user" id="user-icon"></a>
-            <a href="home-loggedout.html" class="fas fa-door-open" id="heart-icon"></a>
+            <a href="/viewprofile" class="fas fa-user" id="user-icon"></a>
+            <a href="../html/home-loggedout.html" class="fas fa-door-open" id="heart-icon"></a>
         </div>
     </header>
 
@@ -71,32 +71,38 @@
                 </div>
                 <form action="/review" method="POST">
                     <div class="dropdown">
-                        <button class="dropdown-button" id="dropbutton">Select an Establishment to Review</button>
+                        <button class="dropdown-button" id="dropbutton">Select an Establishment to
+                            Review</button>
                         <div class="dropdown-content">
-                          <a href="#" data-text="Ate Rica's Bacsilog" onclick="updateDropdownValue('Ate Rica\'s Bacsilog')">Ate Rica's Bacsilog</a>
-                          <a href="#" data-text="Good Munch" onclick="updateDropdownValue('Good Munch')">Good Munch</a>
-                          <a href="#" data-text="Kuya Mel's" onclick="updateDropdownValue('Kuya Mel\'s')">Kuya Mel's</a>
-                          <a href="#" data-text="Happy n Healthy" onclick="updateDropdownValue('Happy n Healthy')">Happy n Healthy</a>
-                          <a href="#" data-text="Potato Giant" onclick="updateDropdownValue('Potato Giant')">Potato Giant</a>
+                            <a href="#" data-text="Ate Rica's Bacsilog"
+                                onclick="updateDropdownValue('Ate Rica\'s Bacsilog')">Ate Rica's Bacsilog</a>
+                            <a href="#" data-text="Good Munch" onclick="updateDropdownValue('Good Munch')">Good
+                                Munch</a>
+                            <a href="#" data-text="Kuya Mel's" onclick="updateDropdownValue('Kuya Mel\'s')">Kuya
+                                Mel's</a>
+                            <a href="#" data-text="Happy n Healthy"
+                                onclick="updateDropdownValue('Happy n Healthy')">Happy n Healthy</a>
+                            <a href="#" data-text="Potato Giant" onclick="updateDropdownValue('Potato Giant')">Potato
+                                Giant</a>
                         </div>
-                      </div>
-                      
-                      <!-- Hidden input to store the selected value -->
-                      <input type="hidden" id="selectedEstname" name="estname">
-                      
-                      <script>
+                    </div>
+
+                    <!-- Hidden input to store the selected value -->
+                    <input type="hidden" id="selectedEstname" name="estname">
+
+                    <script>
                         function updateDropdownValue(value) {
-                          const dropdownButton = document.getElementById('dropbutton');
-                          dropdownButton.innerText = value;
-                      
-                          const selectedInput = document.getElementById('selectedEstname');
-                          selectedInput.value = value;
+                            const dropdownButton = document.getElementById('dropbutton');
+                            dropdownButton.innerText = value;
+
+                            const selectedInput = document.getElementById('selectedEstname');
+                            selectedInput.value = value;
                         }
-                      </script>
-                      
-                <div class="review-forms">
-                  
-                        <textarea placeholder="Write a Review..." name="review"></textarea>
+                    </script>
+
+                    <div class="review-forms">
+
+                        <textarea placeholder="Write a Review..." name="review" required></textarea>
 
                         <div class="rating">
                             <h2>How would you rate the food?</h2>
@@ -115,9 +121,9 @@
                         <h3>Add photos or videos</h3>
                         <input type="file" accept="image/*, video/*" name="attached">
                         <button type="submit" class="submit-button">Submit Review</button>
-                   
-                </div>
-            </form>
+
+                    </div>
+                </form>
             </div>
         </div>
     </section>
@@ -125,7 +131,7 @@
     <!-- js file link-->
     <script src="../js/home.js"></script>
     <script src="../js/dropdown.js"></script>
-    
+
 </body>
 
 </html>

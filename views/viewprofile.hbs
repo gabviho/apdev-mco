@@ -1,0 +1,77 @@
+<div class="container">
+
+        <div class="profile-header" method="GET">
+                {{#if userData.path}}
+                <!-- If the user has a profile picture, display it using the path -->
+                <img class="profile-pic" src="{{userData.path}}">
+                {{else}}
+                    <!-- If the user doesn't have a profile picture, display a default image -->
+                <img class="profile-pic" src="../sprites/monkeypic.png">
+                {{/if}}
+                <h1 class="user-name">
+                    {{userData.name}}
+                </h1>
+        </div>
+
+        <div class="profile-info">
+            <p><span class="labels">Username:</span><span class="value">
+                    {{userData.username}}
+                </span></p>
+            <p><span class="labels">Email:</span><span class="value">
+                    {{userData.email}}
+                </span></p>
+            <p><span class="labels">Birthday:</span><span class="value">
+                    {{userData.date}}
+                </span></p>
+            <p><span class="labels">Location:</span><span class="value">
+                    {{userData.location}}
+                </span></p>
+        </div>
+
+        <div class="profile-bio">
+            <p>
+                {{userData.userbio}}
+            </p>
+        </div>
+
+
+        <div class="reviews">
+            <h2>Reviews</h2>
+            <ul>
+                    {{#each postData}}
+                    <li class="review-item" onclick="editPost('{{this._id}}')">
+                        <div class="review-header">
+                            <p class="restaurant">
+                                {{this.estname}}
+                            </p>
+                            <div class="rating">
+                                <p class="rating-text">Rating: {{this.rating}}/5</p>
+                                
+                                    <i class="fas fa-star star-icon"></i>
+                                    
+                            </div>
+                        </div>
+                        <p class="comment">                                                            
+                            {{this.review}}
+                        </p>
+                    </li>
+                    {{/each}}
+                   
+            </ul>
+        </div>
+
+        <div class="actions">
+            <a href="/editUser" class="button-act">Edit Profile</a>
+            <button class="button-act">Delete Profile</button>
+        </div>
+
+    </div>
+
+    <script>
+
+        function editPost(postId){
+            console.log(postId);
+            window.location.href = `/editPost?postId=` + postId;
+            
+        }
+    </script>

@@ -1,0 +1,64 @@
+<section class="review" id="review">
+        <div class="background-photo">
+            <div class="container">
+                <div class="review-tagline">
+                    <h2>CREATE A REVIEW</h2>
+                </div>
+                <form action="/createPost" method="POST" enctype="multipart/form-data">
+                    <div class="dropdown">
+                        <button class="dropdown-button" id="dropbutton">Select an Establishment to
+                            Review</button>
+                        <div class="dropdown-content">
+                            <a data-text="Ate Rica's Bacsilog"
+                                onclick="updateDropdownValue('Ate Rica\'s Bacsilog')">Ate Rica's Bacsilog</a>
+                            <a data-text="Good Munch" onclick="updateDropdownValue('Good Munch')">Good
+                                Munch</a>
+                            <a data-text="Kuya Mels" onclick="updateDropdownValue('Kuya Mels')">Kuya
+                                Mels</a>
+                            <a data-text="Happy N' Healthy"
+                                onclick="updateDropdownValue('Happy N\' Healthy')">Happy N' Healthy</a>
+                            <a  data-text="Potato Giant" onclick="updateDropdownValue('Potato Giant')">Potato
+                                Giant</a>
+                        </div>
+                    </div>
+
+                    <!-- Hidden input to store the selected value -->
+                    <input type="hidden" id="selectedEstname" name="estname">
+
+                    <script>
+                        function updateDropdownValue(value) {
+                            const dropdownButton = document.getElementById('dropbutton');
+                            dropdownButton.innerText = value;
+
+                            const selectedInput = document.getElementById('selectedEstname');
+                            selectedInput.value = value;
+                        }
+                    </script>
+
+                    <div class="review-forms">
+
+                        <textarea placeholder="Write a Review..." name="review" required></textarea>
+
+                        <div class="rating">
+                            <h2>How would you rate the food?</h2>
+                            <input type="radio" name="rating" id="5str" value="5">
+                            <label for="5str">5</label>
+                            <input type="radio" name="rating" id="4str" value="4">
+                            <label for="4str">4</label>
+                            <input type="radio" name="rating" id="3str" value="3">
+                            <label for="3str">3</label>
+                            <input type="radio" name="rating" id="2str" value="2">
+                            <label for="2str">2</label>
+                            <input type="radio" name="rating" id="1str" value="1">
+                            <label for="1str">1</label>
+                        </div>
+
+                        <h3>Add photos or videos</h3>
+                        <input type="file" accept="image/*, video/*" name="attached" multiple>
+                        <button type="submit" class="submit-button">Submit Review</button>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>

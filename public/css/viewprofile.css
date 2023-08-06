@@ -9,6 +9,19 @@ body {
     font-family: var(--main-font-family);
 }
 
+.background-photo {
+
+    background-image: url('../sprites/reviewsbg.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+}
+
 .container {
     max-width: 800px;
     margin: 50px auto;
@@ -81,6 +94,42 @@ body {
     margin: 0;
 }
 
+/* Add Flexbox styles to align the rating and stars in the same line */
+.review-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.review-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+}
+
+.rating-text {
+    margin-right: 10px;
+}
+
+.star-icon {
+    color: gold;
+    /* Set the color of the star icons to gold or any other color you prefer */
+    font-size: 18px;
+    /* Adjust the font size of the star icons as needed */
+    margin-left: 5px;
+    /* Add a small left margin to create some spacing between the rating text and the star icons */
+}
+
+.star-icon {
+    margin-left: 5px;
+    /* Add a small left margin to create some spacing between the rating text and the star icons */
+}
+
 .restaurant {
     font-weight: bold;
 }
@@ -108,6 +157,7 @@ body {
     border-radius: 7%;
     cursor: pointer;
     font-family: var(--main-font-family);
+    font-size: 14px;
 }
 
 .button-act:hover {

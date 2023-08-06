@@ -1,0 +1,81 @@
+<section class="review" id="review">
+        <div class="background-photo">
+            <div class="container">
+                <div class="review-tagline">
+                    <h2>EDIT REVIEW</h2>
+                </div>
+                <form action="/confirmEditPost" method="POST" enctype="multipart/form-data">
+                    <div class="dropdown">
+                        <button class="dropdown-button" disabled>{{post.estname}}</button>
+                        <div class="dropdown-content">
+                            <a data-text="Ate Rica's Bacsilog"
+                                 disabled>Ate Rica's Bacsilog</a>
+                            <a data-text="Good Munch" disabled>Good
+                                Munch</a>
+                            <a data-text="Kuya Mels" disabled>Kuya
+                                Mels</a>
+                            <a data-text="Happy N' Healthy" disabled>Happy N' Healthy</a>
+                            <a  data-text="Potato Giant"  disabled>Potato
+                                Giant</a>
+                        </div>
+                    </div>
+
+                    <!-- Hidden input to store the selected value -->
+                    <input type="hidden" id="selectedEstname" name="estname" value="{{post.estname}}">
+                    <input type="hidden" name="_id" value="{{post._id}}">
+                    
+
+                    <div class="review-forms">
+
+                        <textarea placeholder="Write a Review..."  name="review" required>{{post.review}}</textarea>
+
+                        <div class="rating" id="ratinginput" >
+                            <h2>How would you rate the food?</h2>
+                            <input type="radio" name="rating" id="5str" value="5">
+                            <label for="5str">5</label>
+                            <input type="radio" name="rating" id="4str" value="4">
+                            <label for="4str">4</label>
+                            <input type="radio" name="rating" id="3str" value="3">
+                            <label for="3str">3</label>
+                            <input type="radio" name="rating" id="2str" value="2">
+                            <label for="2str">2</label>
+                            <input type="radio" name="rating" id="1str" value="1">
+                            <label for="1str">1</label>
+                        </div>
+
+                        <h3>Add photos or videos</h3>
+                        <input type="file" accept="image/*, video/*" name="attached">
+                        <button type="submit" class="submit-button" name="submit" value="confirm">Confirm Edits</button>
+                        <button type="submit" class="submit-button" name="submit" value="delete">Delete Review</button>
+                        
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const rating = {{post.rating}};
+        document.addEventListener("DOMContentLoaded", (event) => {
+            switch(rating) {
+                case 1: 
+                    document.getElementById('1str').checked = true;
+                    break;
+                case 2: 
+                    document.getElementById('2str').checked = true;
+                    break;
+                case 3: 
+                    document.getElementById('3str').checked = true;
+                    break;
+                case 4: 
+                    document.getElementById('4str').checked = true;
+                    break;
+                case 5: 
+                    document.getElementById('5str').checked = true;
+                    break;
+            }
+        });
+        
+
+
+    </script>

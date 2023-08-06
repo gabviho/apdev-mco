@@ -1,9 +1,9 @@
-const {MongoClient} = require('mongodb');
+const { MongoClient } = require('mongodb');
 
 const mongoURI = process.env.MONGODB_URI;
 const client = new MongoClient(mongoURI);
 
-function connectToMongo (callback) {
+function connectToMongo(callback) {
     client.connect().then((client) => {
         return callback();
     }).catch((err) => {

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+<link rel="stylesheet" type="text/css" href="../css/establishment.css">
+<!-- font link-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<link rel="stylesheet" href="../css/home.css">
+</head>
+
+<body>
+
+  <!-- HEADER START -->
+  <header>
+
+    <a href="../html/homepage.html" class="logo">
+      <img src="../sprites/icon.png" alt="Logo">
+      The Monkey Serve
+    </a>
+
+    <nav class="navbar">
+      <a class="active" href="home-loggedin.html">Home</a>
+      <ul class="dropdown">
+        <li class="dropdown-toggle">Establishments
+          <ul class="dropdown-menu">
+            <li><a href="/estAteRicas">Ate Rica's Bacsilog</a></li>
+            <li><a href="/estGoodMunch">Good Munch</a></li>
+            <li><a href="/estKuyaMels">Kuya Mel's</a></li>
+            <li><a href="/estHappyNHealthy">Happy n Healthy</a></li>
+            <li><a href="/estPotatoGiant">Potato Giant</a></li>
+          </ul>
+        </li>
+      </ul>
+      <a href="../html/createreview.html">Review</a>
+      <a href="#aboutus">About Us</a>
+      <!--<a href="#search">Search</a>
+      <a href="#login">Login</a> -->
+    </nav>
+
+
+    <div class="icons">
+      <i class="fas fa-bars" id="bars"></i>
+      <i class="fas fa-search" id="search-icon"></i>
+      <a href="/viewprofile" class="fas fa-user" id="user-icon"></a>
+      <a href="../html/home-loggedout.html" class="fas fa-door-open" id="heart-icon"></a>
+    </div>
+  </header>
+
+  <!-- HEADER END -->
+
+  <!-- SEARCH -->
+
+  <form action="" id="search-form">
+    <input type="search" placeholder="search here..." name="" id="search-box">
+    <label for="search-box" class="fas fa-search"></label>
+    <i class="fas fa-times" id="close"></i>
+  </form>
+
+  <!-- SEARCH END -->
+
+  <section class="establishment" id="establishment">
+    <div class="header" style="background-image: url('<%= estData.path %>');">
+      <div class="content"></div>
+    </div>
+    <div class="content-text">
+      <div class="text-container">
+        <h2>
+          <%= estData.name %>
+            <div class="star-rating">
+              <% for (let i=0; i < estData.rating; i++) { %>
+                <i class="fas fa-star star-icon"></i>
+                <% } %>
+            </div>
+        </h2>
+        <span class="rating">Rating: <%= averageRating.toFixed(1) %>/5 (<%= loopPosts.length %> review/s)</span>
+        <a href="<%= estData.reviewLink %>" class="custom-button">Review Now</a>
+      </div>
+    </div>
+
+    <div class="description-content">
+      <img src="<%= estData.icon %>" class="aligned-image">
+      <p class="image-description">
+        <%= estData.description %>
+      </p>
+    </div>
+
+    <% for (let i=0; i < loopPosts.length; i++) { %>
+      <div class="comment-container">
+        <div class="profile-picture">
+          <img src="sprites/agno.jpg" alt="Profile Picture">
+        </div>
+        <div class="comment-content">
+          <span class="comment-author">
+            <%= loopPosts[i].custname %>
+          </span>
+          &nbsp &nbsp &nbsp
+          <span class="comment-author">
+            <%= loopPosts[i].rating %>/5
+          </span>
+
+          <p class="comment-text">
+            <%= loopPosts[i].review %>
+          </p>
+          <span class="comment-time">143 hours ago</span>
+          <div class="comment-buttons">
+            <button class="helpful-button" click="incrementHelpful('loopPosts[i]._id.toString() %>');">Helpful <%=
+                loopPosts[i].helpful_num %></button>
+            <button onclick="incrementHelpful('<%= loopPosts[i]._id.toString() %>');">Not Helpful <%=
+                loopPosts[i].helpful_num %></button>
+
+            <form id="comment_form" action="/comment" method="POST">
+              <textarea placeholder="write a comment..." name="comment"></textarea>
+              <div class="row button">
+                <!-- <input type="submit" value="comment_btn" id="login-btn"> -->
+                <button type="submit" value="comment_btn" id="submitcommentbtn">Add Comment</button>
+
+                <!-- Hidden input field -->
+                <input type="hidden" name="post_number" value="<%= loopPosts[i]._id %>">
+              </div>
+            </form>
+
+          </div>
+
+        </div>
+      </div>
+      <% } %>
+
+  </section>
+
+  <script>
+    function incrementHelpful(postId) {
+      // Make an AJAX request to the server to increment the helpful_num
+      // Replace 'YOUR_SERVER_ENDPOINT' with your server-side endpoint for updating the helpful_num
+      fetch('/updateHelpfulNum?postId=${postId}')
+        .then(response => response.json())
+        .then(data => {
+          // Handle the response if needed
+          console.log(data);
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+    }
+  </script>
+
+  <!-- js file link-->
+  <script src="js/home.js"></script>
+</body>
+
+</html>
