@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create a Review Tab</title>
+  <link rel="stylesheet" type="text/css" href="./css/index-style.css">
+  <link rel="stylesheet" href="./css/home.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/createreview.css">
+</head>
+
+<body>
+  {{#if isLoggedIn}}
+    {{> header_loggedin}}
+  {{else}}
+    {{> header_loggedout}}
+  {{/if}}
+  
+  {{> search}}
+  {{{body}}}
+  <!-- js file link-->
+  <script src="./js/home.js"></script>
+  <script src="../js/dropdown.js"></script>
+</body>
+
+</html>

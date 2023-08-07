@@ -1,0 +1,224 @@
+<section class="establishment" id="establishment">
+    <div class="header" style="background-image: url({{estData.path}});">
+      <div class="content"></div>
+    </div>
+    <div class="content-text">
+      <div class="text-container">
+        <h2>{{estData.name}}</h2>
+        <span id="est_rating" class="rating">Rating: {{rating}}/5 ({{postLength}} review/s)</span>
+        <a href="" class="custom-button">Review Now</a>
+      </div>
+    </div>
+
+    <div class="description-content">
+      <img src="{{estData.icon}}" class="aligned-image">
+      <p class="image-description">
+        {{estData.description}}
+      </p>
+    </div>
+
+    
+
+    {{#each postData}}
+      <div class="comment-container">
+
+       
+        <div class="profile-picture">
+          <img src="{{this.cust_profpic}}" alt="Profile Picture">
+        </div>
+        
+        <div class="comment-content">
+          <span class="comment-author">
+            {{this.cust_name}}
+          </span>
+          &nbsp &nbsp &nbsp
+          <span class="comment-author post-ratings">
+            {{this.rating}}/5
+          </span>
+          
+
+          <p class="comment-text">
+            {{this.review}}
+          </p>
+          {{#if this.attached}}
+          <div class="pics_container">
+              {{#each this.attached}}
+              <img src="{{this}}" class="review_pics"/>
+              {{/each}}
+          </div>
+          {{/if}}
+          
+          <span class="comment-time">143 hours ago</span>
+          <div class="comment-buttons">
+            <input type="hidden" id="postid" value="{{this._id}}" >
+            <button id="helpful" class="helpful-button">Helpful 
+                {{this.helpful_num}}</button>
+            <button id="nothelpful" >Not Helpful 
+                {{this.nothelpful_num}}</button>
+            {{#each this.comments}}
+              <div class="comment-container">
+        
+                <div class="profile-picture">
+                  <img src="{{this.pic}}" alt="Profile Picture">
+                </div>
+                
+                <div class="comment-content">
+                  <span class="comment-author">
+                    {{this.estname}}
+                  </span>
+                  &nbsp &nbsp &nbsp                
+
+                  <p class="comment-text">
+                    {{this.comment}}
+                  </p>
+                  
+                  <span class="comment-time">143 hours ago</span>
+
+                </div>
+                
+              </div>
+              {{/each}}
+
+          </div>
+
+        </div>
+        <!--
+        <div class="dropdown-container">
+          <button class="dropdown-button" onclick="toggleDropdown({{@index}})">⋮</button>
+          <div class="dropdown-content" id="dropdownMenu{{@index}}">
+            <a href="/editPost" onclick="editComment({{@index}})">Edit</a>
+            <a href="/deletePost" onclick="deleteComment({{@index}})">Delete</a>
+          </div>
+        </div>
+        !-->
+      </div>
+      {{/each}}
+
+      <script>
+        //const rating = parseInt(document.querySelector('#est_rating').innerText.substring(8,9));
+        const post_ratings = document.querySelectorAll('.post-ratings');
+        const helpfulBtn = document.querySelector('#helpful');
+        const postid = document.querySelector('#postid');
+        const nothelpfulBtn = document.querySelector('#nothelpful');
+        const container = document.querySelector('#starrating');
+
+        helpfulBtn.addEventListener('click', async function (e) {
+          e.preventDefault();
+          const postId = postid.value;  
+          const response = await fetch('/updateHelpful?postId=' + postId,{
+              method: 'GET',
+          });
+          if (response.status == 400) {
+              helpfulBtn.innerText = "Helpful " + (parseInt(helpfulBtn.innerText.substring(8)) + 1).toString();
+          } else if (response.status == 200){
+              console.log('ok');
+          }
+        });
+
+        nothelpfulBtn.addEventListener('click', async function (e) {
+          e.preventDefault();
+          const postId = postid.value;  
+          const response = await fetch('/updateNotHelpful?postId=' + postId,{
+              method: 'GET',
+          });
+          if (response.status == 400) {
+              nothelpfulBtn.innerText = "Not Helpful " + (parseInt(nothelpfulBtn.innerText.substring(12)) + 1).toString();
+          } else if (response.status == 200){
+              console.log('ok');
+          }
+        });
+
+        window.addEventListener('load',  (event) => {
+          console.log(post_ratings);
+            for(let i = 0; i != post_ratings.length; i++) {
+              let rating = post_ratings[i].innerText.substring(0,1);
+              console.log(rating);
+              let text_rating = document.createElement("p");
+              text_rating.innerText = post_ratings[i].innerText;
+              //post_ratings[i].innerText="";
+              for (let j = 0; j != rating; j++) {
+                let star = document.createElement("i");
+                star.classList.add("fas");
+                star.classList.add("fa-star");
+                star.classList.add("star-icon");
+                post_ratings[i].prepend(star);
+              }
+              //post_ratings[i].appendChild(text_rating);
+            }
+        });
+
+        
+      </script>
+
+<!--
+      <script>
+  function toggleDropdown(commentNumber) {
+    var dropdownMenu = document.getElementById("dropdownMenu" + commentNumber);
+    dropdownMenu.classList.toggle("show");
+  }
+
+  function editComment(commentNumber) {
+    
+    console.log("Edit clicked for comment " + commentNumber);
+  }
+
+  function deleteComment(commentNumber) {
+    
+    console.log("Delete clicked for comment " + commentNumber);
+  }
+
+  // Close the dropdown menu if the user clicks outside of it
+  window.onclick = function(event) {
+    if (!event.target.matches('.dropdown-button') && !event.target.matches('.dropdown-content')) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      for (var i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }
+</script>
+
+<style>
+  .dropdown-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-button {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    right:0px;
+    background-color: #f9f9f9;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  .dropdown-content a {
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: #333;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #f1f1f1;
+  }
+
+  .show {
+    display: block;
+  }
+</style>
+   !--> 
+
+  </section>

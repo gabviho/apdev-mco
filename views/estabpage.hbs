@@ -1,0 +1,21 @@
+
+    {{>swipe}}
+    <!-- ESTABLISHMENT REVIEW LINK -->
+
+    <h1>Restaurant Reviews</h1>
+    <div class="restaurant-grid">
+        {{#each establishments}}
+        <div class="restaurant-card">
+            <img src={{this.icon}} alt="Restaurant 1">
+            <h2>{{this.name}}</h2>
+            <p>{{this.description}}</p>
+            <a href={{this.link}}>Read More</a>
+        </div>
+        {{/each}}
+        
+    </div>
+    <!--ESTABLISHMENT REVIEW LINK END -->
+
+    {{> about}}
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>

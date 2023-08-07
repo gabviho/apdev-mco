@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Edit Profile</title>
+    <link rel="stylesheet" href="../css/editprofile.css">
+    <!-- font link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="../css/home.css">
+</head>
+
+<body>
+    <!-- HEADER START -->
+    <header>
+
+        <a href="../html/homepage.html" class="logo">
+            <img src="../sprites/icon.png" alt="Logo">
+            The Monkey Serve
+        </a>
+
+        <nav class="navbar">
+            <a class="home" href="../html/homepage.html">Home</a>
+            <ul class="dropdown">
+                <li class="dropdown-toggle">Establishments
+                    <ul class="dropdown-menu">
+                        <li><a href="/estAteRicas">Ate Rica's Bacsilog</a></li>
+                        <li><a href="/estGoodMunch">Good Munch</a></li>
+                        <li><a href="/estKuyaMels">Kuya Mel's</a></li>
+                        <li><a href="/estHappyNHealthy">Happy n Healthy</a></li>
+                        <li><a href="/estPotatoGiant">Potato Giant</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <a href="../html/createreview.html">Review</a>
+            <a href="#aboutus">About Us</a>
+            <!--<a href="#search">Search</a>
+        <a href="#login">Login</a> -->
+        </nav>
+
+
+
+        <div class="icons">
+            <i class="fas fa-bars" id="bars"></i>
+            <i class="fas fa-search" id="search-icon"></i>
+            <a href="home-loggedin.html" class="fas fa-times" id="user-icon"></a>
+            <a href="../html/home-loggedout.html" class="fas fa-door-open" id="heart-icon"></a>
+        </div>
+    </header>
+
+    <!-- HEADER END -->
+
+    <!-- SEARCH -->
+
+    <form action="" id="search-form">
+        <input type="search" placeholder="search here..." name="" id="search-box">
+        <label for="search-box" class="fas fa-search"></label>
+        <i class="fas fa-times" id="close"></i>
+    </form>
+
+    <!-- SEARCH END -->
+
+    <div class="backgroud-photo">
+        <div class="container">
+
+            <div>
+                <h1 class="editprof-name">Edit Profile</h1>
+            </div>
+
+
+            <div class="review-forms">
+
+                <form action="/edit" method="POST" enctype="multipart/form-data">
+                    <div class="profile-picture">
+                        <img id="img" src="../sprites/monkeypic.png">
+                        <label for="picture-input-btn">Change Profile Picture</label>
+                        <input type="file" name="profilePicture" id="picture-input-btn">
+                    </div>
+
+                    <label class="label">Enter New Name:</label>
+                    <input type="text" name="name" id="name" required>
+
+                    <label class="label">Enter New Username:</label>
+                    <input type="text" name="username" id="username" required>
+
+                    <label class="label">Enter New Email:</label>
+                    <input type="text" name="email" id="user-email" required>
+
+                    <label class="label">Location:</label>
+                    <input type="text" name="location" id="user-loc" required>
+
+                    <label class="label">New Bio:</label>
+                    <input type="text" name="userbio" id="user-bio" required>
+
+                    <label class="label">New Password:</label>
+                    <input type="text" name="password" id="user-password" required>
+
+
+                    <button type="submit" class="submit-button">Submit Review</button>
+
+                </form>
+
+            </div>
+            <!-- js file link-->
+            <script src="../js/home.js"></script>
+            <script src="../js/editprofile.js"></script>
+
+        </div>
+    </div>
+
+
+</body>
+
+
+</html>

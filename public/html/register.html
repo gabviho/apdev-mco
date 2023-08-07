@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up | The Monkey Serve</title>
+  <link rel="stylesheet" href="../css/register.css">
+  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+</head>
+
+<body>
+
+  <!-- HEADER START -->
+  <header>
+
+    <a href="../html/homepage.html" class="logo">
+      <img src="../sprites/icon.png" alt="Logo">
+      The Monkey Serve
+    </a>
+
+    <nav class="navbar">
+      <a class="home" href="../html/homepage.html">Home</a>
+      <ul class="dropdown">
+        <li class="dropdown-toggle">Establishments
+          <ul class="dropdown-menu">
+            <li><a href="/estAteRicas">Ate Rica's Bacsilog</a></li>
+            <li><a href="/estGoodMunch">Good Munch</a></li>
+            <li><a href="/estKuyaMels">Kuya Mel's</a></li>
+            <li><a href="/estHappyNHealthy">Happy n Healthy</a></li>
+            <li><a href="/estPotatoGiant">Potato Giant</a></li>
+          </ul>
+        </li>
+      </ul>
+      <a href="../html/createreview.html">Review</a>
+      <a href="#aboutus">About Us</a>
+      <!--<a href="#search">Search</a>
+      <a href="#login">Login</a> -->
+    </nav>
+
+
+
+    <div class="icons">
+      <i class="fas fa-bars" id="bars"></i>
+      <i class="fas fa-search" id="search-icon"></i>
+    </div>
+  </header>
+
+  <!-- HEADER END -->
+
+  <!-- SEARCH -->
+
+  <form action="" id="search-form">
+    <input type="search" placeholder="search here..." name="" id="search-box">
+    <label for="search-box" class="fas fa-search"></label>
+    <i class="fas fa-times" id="close"></i>
+  </form>
+
+  <!-- SEARCH END -->
+
+  <div class="bg">
+    <div class="container">
+      <div class="wrapper">
+        <div class="title"><span>Create an Account</span></div>
+        <form action="/register" method="POST">
+          <div class="row">
+            <i class="fas fa-user"></i>
+            <input type="text" name="name" placeholder="Name" required>
+          </div>
+          <div class="row">
+            <i class="fas fa-user"></i>
+            <input type="text" name="username" placeholder="username" required>
+          </div>
+          <div class="row">
+            <i class="fas fa-envelope"></i>
+            <input type="email" name="email" placeholder="Email" required>
+          </div>
+          <div class="row">
+            <i class="fas fa-calendar-alt"></i>
+            <input type="date" name="date" placeholder="Birthday" required>
+          </div>
+          <div class="row">
+            <i class="fas fa-map-marker-alt"></i>
+            <input type="text" name="location" placeholder="Location" required>
+          </div>
+          <div class="row">
+            <i class="fas fa-lock"></i>
+            <input type="password" name="password" placeholder="Password" required>
+          </div>
+          <div class="row">
+            <i class="fas fa-users"></i>
+            <select name="role">
+              <option selected disabled>Select your role</option>
+              <option value="customer">Customer</option>
+              <option value="owner">Establishment Owner</option>
+            </select>
+          </div>
+          <div class="row button">
+            <input type="submit" name="submit" value="Sign Up">
+          </div>
+          <div class="login-link">Already have an account? <a href="login.html">Log in</a></div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- js file link-->
+  <script src="../js/home.js"></script>
+
+</body>
+
+</html>

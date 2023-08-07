@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- font link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/createreview.css">
+    <link rel="stylesheet" href="../css/home.css">
+
+    <title>Create a Review Tab</title>
+</head>
+
+<body>
+
+    <!-- HEADER START -->
+    <header>
+
+        <a href="../html/homepage.html" class="logo">
+            <img src="../sprites/icon.png" alt="Logo">
+            The Monkey Serve
+        </a>
+
+        <nav class="navbar">
+            <a class="." href="../html/homepage.html">Home</a>
+            <ul class="dropdown">
+                <li class="dropdown-toggle">Establishments
+                    <ul class="dropdown-menu">
+                        <li><a href="/estAteRicas">Ate Rica's Bacsilog</a></li>
+                        <li><a href="/estGoodMunch">Good Munch</a></li>
+                        <li><a href="/estKuyaMels">Kuya Mel's</a></li>
+                        <li><a href="/estHappyNHealthy">Happy n Healthy</a></li>
+                        <li><a href="/estPotatoGiant">Potato Giant</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <a class="active" href="../createreview.html">Review</a>
+            <a href="../html/homepage.html">About Us</a>
+            <!--<a href="#search">Search</a>
+            <a href="#login">Login</a> -->
+        </nav>
+
+
+
+        <div class="icons">
+            <i class="fas fa-bars" id="bars"></i>
+            <i class="fas fa-search" id="search-icon"></i>
+            <a href="/viewprofile" class="fas fa-user" id="user-icon"></a>
+            <a href="../html/home-loggedout.html" class="fas fa-door-open" id="heart-icon"></a>
+        </div>
+    </header>
+
+    <!-- HEADER END -->
+
+    <!-- SEARCH -->
+    <form action="" id="search-form">
+        <input type="search" placeholder="search here..." name="" id="search-box">
+        <label for="search-box" class="fas fa-search"></label>
+        <i class="fas fa-times" id="close"></i>
+    </form>
+
+
+    <!-- SEARCH END -->
+
+    <section class="review" id="review">
+        <div class="background-photo">
+            <div class="container">
+                <div class="review-tagline">
+                    <h2>CREATE A REVIEW</h2>
+                </div>
+                <form action="/review" method="POST">
+                    <div class="dropdown">
+                        <button class="dropdown-button" id="dropbutton">Select an Establishment to
+                            Review</button>
+                        <div class="dropdown-content">
+                            <a href="#" data-text="Ate Rica's Bacsilog"
+                                onclick="updateDropdownValue('Ate Rica\'s Bacsilog')">Ate Rica's Bacsilog</a>
+                            <a href="#" data-text="Good Munch" onclick="updateDropdownValue('Good Munch')">Good
+                                Munch</a>
+                            <a href="#" data-text="Kuya Mel's" onclick="updateDropdownValue('Kuya Mel\'s')">Kuya
+                                Mel's</a>
+                            <a href="#" data-text="Happy n Healthy"
+                                onclick="updateDropdownValue('Happy n Healthy')">Happy n Healthy</a>
+                            <a href="#" data-text="Potato Giant" onclick="updateDropdownValue('Potato Giant')">Potato
+                                Giant</a>
+                        </div>
+                    </div>
+
+                    <!-- Hidden input to store the selected value -->
+                    <input type="hidden" id="selectedEstname" name="estname">
+
+                    <script>
+                        function updateDropdownValue(value) {
+                            const dropdownButton = document.getElementById('dropbutton');
+                            dropdownButton.innerText = value;
+
+                            const selectedInput = document.getElementById('selectedEstname');
+                            selectedInput.value = value;
+                        }
+                    </script>
+
+                    <div class="review-forms">
+
+                        <textarea placeholder="Write a Review..." name="review" required></textarea>
+
+                        <div class="rating">
+                            <h2>How would you rate the food?</h2>
+                            <input type="radio" name="rating" id="5str" value="5">
+                            <label for="5str">5</label>
+                            <input type="radio" name="rating" id="4str" value="4">
+                            <label for="4str">4</label>
+                            <input type="radio" name="rating" id="3str" value="3">
+                            <label for="3str">3</label>
+                            <input type="radio" name="rating" id="2str" value="2">
+                            <label for="2str">2</label>
+                            <input type="radio" name="rating" id="1str" value="1">
+                            <label for="1str">1</label>
+                        </div>
+
+                        <h3>Add photos or videos</h3>
+                        <input type="file" accept="image/*, video/*" name="attached">
+                        <button type="submit" class="submit-button">Submit Review</button>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- js file link-->
+    <script src="../js/home.js"></script>
+    <script src="../js/dropdown.js"></script>
+
+</body>
+
+</html>

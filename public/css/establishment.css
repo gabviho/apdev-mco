@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css2?family=Bacasime+Antique&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bacasime+Antique&family=Coustard&display=swap');
+
+
+:root {
+  --main-font-family: 'Bacasime Antique', serif;
+  --secondary-font-family: 'Coustard', serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-size: cover;
+  background-position: center;
+  height: 50vh;
+  width: 100%;
+}
+
+.content {
+  margin-top: 0;
+}
+
+.text-container {
+  padding: px;
+  width: 50%;
+  margin: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.establishment {
+  padding-top: 5rem;
+}
+
+.text-container h2 {
+  margin-bottom: 0.5rem;
+  font-size: 36px;
+  margin-bottom: 10px;
+  font-family: var(--main-font-family);
+  color: black;
+  /* Set the text color of the h2 element */
+}
+
+.star-icon {
+  color: #e6c961;
+}
+
+.text-container h2 .star-icon {
+  color: #e6c961;
+  /* Override the color for the star icon inside h2 */
+}
+
+.text-container p {
+  font-size: 18px;
+  margin: 0;
+  font-family: var(--main-font-family);
+}
+
+.content--text {
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.rating {
+  font-size: 14px;
+  margin-left: 1px;
+  font-weight: normal;
+}
+
+.small-image {
+  width: 30px;
+  height: auto;
+  margin-left: 5px;
+  margin-top: 5px;
+  margin-right: 1px;
+}
+
+.star-image {
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+  margin-top: 5px;
+  margin-right: 1px;
+}
+
+.custom-button {
+  width: 100px;
+  height: 30px;
+  background-color: #e6c961;
+  border: none;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  font-family: var(--main-font-family);
+  display: flex;
+  /* Use flexbox */
+  justify-content: center;
+  /* Center horizontally */
+  align-items: center;
+  /* Center vertically */
+}
+
+
+.description-content {
+
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10rem;
+}
+
+.aligned-image {
+  display: block;
+  float: left;
+  width: 600px;
+  height: auto;
+  margin-left: 50px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.image-description {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 2px;
+  margin-top: 70px;
+  margin-right: 50px;
+  font-family: var(--main-font-family);
+}
+
+.comment-container {
+  background-size: cover;
+  background-color: #e8ca322a;
+  border-radius: 5px;
+  border-width: 1rem;
+  border-color: black;
+  padding: 10px;
+  display: flex;
+
+  width: 100%;
+  /* Center the .comment-container below other divs */
+  border: 0.5px solid black;
+  margin: 10px auto;
+}
+
+.profile-picture {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 10px;
+}
+
+.profile-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.comment-content {
+  flex-grow: 1;
+  font-family: var(--secondary-font-family);
+  font-size: larger;
+}
+
+.comment-author {
+  font-weight: bold;
+  color: #333;
+  font-family: var(--main-font-family);
+  font-size: large;
+  color: black;
+}
+
+.star-image {
+  color: #e6c961;
+  /* Set the star icon color to yellow */
+}
+
+.comment-text {
+  margin-top: 5px;
+  color: #666;
+  font-family: var(--secondary-font-family);
+}
+
+.comment-time {
+  font-size: 12px;
+  color: #999;
+}
+
+.comment-buttons {
+  margin-top: 10px;
+}
+
+.comment-buttons button {
+  color: #d1b74e;
+  border: none;
+  border-radius: 3px;
+  padding: 5px 10px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.comment-buttons button:hover {
+  background-color: #e8ca32;
+}
+
+.comment-buttons button:focus {
+  outline: none;
+}
+
+.helpful-button {
+  background-color: #50cd34c5;
+}
+
+.not-helpful-button {
+  background-color: #ef5b41c5;
+}
+
+.delete-button {
+  background-color: #2e2d2dc5;
+}
+
+.edit-button {
+  background-color: #939393c5;
+}
+
+.description-content {
+  display: flex;
+  align-items: flex-start;
+}
+
+.aligned-image {
+  display: block;
+  width: 600px;
+  height: auto;
+  margin-left: 50px;
+  margin-right: 10px;
+}
+
+.image-description {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 2px;
+  margin-top: 70px;
+  margin-right: 50px;
+  font-family: var(--secondary-font-family);
+  font-size: large;
+}
+
+@media screen and (max-width: 991px) {
+  .description-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .aligned-image {
+    width: 50%;
+    margin: 10px 0;
+  }
+
+  .image-description {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 20px;
+    width: 80%;
+    max-width: 600px;
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .description-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .aligned-image {
+    width: 50%;
+    margin: 10px 0;
+  }
+
+  .image-description {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 20px;
+    width: 80%;
+    max-width: 600px;
+    font-size: 15px;
+  }
+}
+
+.pics_container {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  width: 150px;
+  height: 150px;
+}
+
+.review_pics {
+  max-width: 100%;
+  max-height: 100%;
+}

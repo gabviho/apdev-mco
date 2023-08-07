@@ -1,0 +1,44 @@
+<div class="backgroud-photo">
+        <div class="container">
+
+            <div>
+                <h1 class="editprof-name">Edit Profile</h1>
+            </div>
+
+
+            <div class="review-forms">
+
+                <form id="editForm" action="/editUserDetails" method="POST" enctype="multipart/form-data">
+                    <div class="profile-picture">
+                        <img id="img" src="{{userData.path}}">
+                        <label for="picture-input-btn">Change Profile Picture</label>
+                        <input type="file" name="profilePicture" id="picture-input-btn" >
+                    </div>
+
+                    <label class="label">Enter New Name: </label>
+                    <input type="text" name="name" id="name" value="{{userData.name}}" required>
+
+                    <label class="label">Enter New Username: </label>
+                    <input type="text" name="username" id="username" value="{{userData.username}}" required>
+
+                    <label class="label">Enter New Email: </label>
+                    <input type="text" name="email" id="user-email" value="{{userData.email}}" required>
+
+                    <label class="label">Location: </label>
+                    <input type="text" name="location" id="user-loc" value="{{userData.location}}" required>
+
+                    <label class="label">New Bio: </label>
+                    <input type="text" name="userbio" id="user-bio" value="{{userData.userbio}}" required>
+
+                    <label class="label">New Password: </label>
+                    <input type="text" name="password" id="user-password" value="{{userData.password}}" required>
+
+
+                    <button type="submit" class="submit-button">Confirm Update</button>
+
+                </form>
+
+            </div>
+
+        </div>
+    </div>

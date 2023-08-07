@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Coustard&display=swap');
+
+:root {
+    --main-font-family: 'Coustard', seriff;
+}
+
+body {
+    background-color: white;
+    font-family: var(--main-font-family);
+}
+
+.background-photo {
+
+    background-image: url('../sprites/reviewsbg.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 2);
+    border-radius: 2%;
+    margin-top: 100px;
+}
+
+.profile-header {
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+    transition: opacity 0.3s ease;
+}
+
+.profile-header:hover img {
+    opacity: 0.7;
+}
+
+.profile-pic {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user-name {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.profile-info {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.labels {
+    font-weight: bold;
+    color: #E8CB32;
+}
+
+.value {
+    margin-left: 10px;
+}
+
+.profile-bio {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.reviews {
+    margin-top: 0px;
+}
+
+.review-item {
+    padding: 10px;
+    background-color: #f7f7f7;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+
+}
+
+.review-item:hover {
+    transform: translateX(10px);
+}
+
+.review-item p {
+    margin: 0;
+}
+
+/* Add Flexbox styles to align the rating and stars in the same line */
+.review-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.review-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+}
+
+.rating-text {
+    margin-right: 10px;
+}
+
+.star-icon {
+    color: gold;
+    /* Set the color of the star icons to gold or any other color you prefer */
+    font-size: 18px;
+    /* Adjust the font size of the star icons as needed */
+    margin-left: 5px;
+    /* Add a small left margin to create some spacing between the rating text and the star icons */
+}
+
+.star-icon {
+    margin-left: 5px;
+    /* Add a small left margin to create some spacing between the rating text and the star icons */
+}
+
+.restaurant {
+    font-weight: bold;
+}
+
+.rating {
+    color: #E8CB32;
+    font-weight: bold;
+}
+
+.comment {
+    margin-top: 5px;
+}
+
+.actions {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-act {
+    padding: 10px 30px;
+    background-color: #E8CB32;
+    color: #fff;
+    border: none;
+    border-radius: 7%;
+    cursor: pointer;
+    font-family: var(--main-font-family);
+    font-size: 14px;
+}
+
+.button-act:hover {
+    opacity: 0.7;
+}

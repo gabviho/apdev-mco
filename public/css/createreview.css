@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Coustard&display=swap');
+
+:root {
+    --main-font-family: 'Coustard', seriff;
+}
+
+.background-photo {
+
+    background-image: url('../sprites/reviewsbg.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+}
+
+.header-container {
+    background-color: #E8CB32;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 55px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+    border-radius: 2%;
+    margin-top: 175px;
+    resize: both;
+    overflow: auto;
+}
+
+.review-tagline h2 {
+    font-family: var(--main-font-family);
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 25px;
+    margin-top: 0px;
+
+}
+
+.review-forms form {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--main-font-family);
+}
+
+.review-forms input[type="text"],
+.review-forms textarea {
+    margin-bottom: 10px;
+    padding: 15px;
+    font-family: var(--main-font-family);
+}
+
+.rating {
+    margin-bottom: 10px;
+}
+
+.rating label {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.submit-button {
+    margin-top: 25px;
+    padding: 10px 20px;
+    background-color: #E8CB32;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-family: var(--main-font-family);
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    opacity: 0.7;
+}
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-button {
+    background-color: #E8CB32;
+    color: white;
+    padding: 10px 20px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.dropdown-button:hover {
+    opacity: 0.7;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    font-size: 14px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
